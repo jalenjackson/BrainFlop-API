@@ -1,0 +1,33 @@
+{
+  "name": "node-react-docker-compose",
+  "version": "1.0.0",
+  "description": "A reference for running a node server and create-react-app app via docker-compose.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peter Coles",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.329.0",
+    "bcrypt": "^3.0.1",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "moment": "^2.22.2",
+    "mongoose": "^5.3.0",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.0",
+    "multer-s3": "^2.7.0",
+    "multiparty": "^4.2.1",
+    "node-gyp": "^3.8.0",
+    "nodemon": "^1.18.4",
+    "path": "^0.12.7",
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.7"
+  }
+}
