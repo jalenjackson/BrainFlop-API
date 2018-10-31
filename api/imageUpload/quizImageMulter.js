@@ -9,9 +9,6 @@ aws.config.update({
   region: 'us-east-1',
 });
 
-console.log(process.env.AWS_SECRET)
-console.log(process.env.AWS_ACCESS_KEY)
-
 const s3 = new aws.S3();
 
 const upload = multer({

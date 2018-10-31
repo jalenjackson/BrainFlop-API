@@ -3,7 +3,6 @@ const Quiz = require('../../models/quiz');
 exports.getAllQuizzesByTopic = (req, res) => {
   Quiz.find(({"tags" : { $regex : req.body.topic, $options : 'i' } }))
     .skip(req.body.skipIterator)
-    .limit(4)
     .select('-__v')
     .exec()
     .then((quizzes) => {

@@ -14,6 +14,9 @@ router.post('/quizzes-by-topic', QuizzesController.getQuizzesByTopic);
 // Create new Quiz
 router.post('/', checkAuth, upload.single('quizImage'), QuizzesController.createNewQuiz);
 
+// Create new Quiz from API
+router.post('/api', checkAuth, upload.single('quizImage'), QuizzesController.createNewQuizFromAPI);
+
 // Retrieve individual quiz
 router.get('/:quizId', QuizzesController.retrieveQuiz);
 

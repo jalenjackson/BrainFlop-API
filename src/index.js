@@ -27,6 +27,7 @@ app.use(express.static(CLIENT_BUILD_PATH));
 // Instantiate Express
 
 // Connect to MongoDB Database
+console.log(process.env.MONGODB_URL)
 mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
 });
@@ -55,10 +56,6 @@ app.use('/tags', tagRoutes);
 app.use('/time', timeRoutes);
 app.use('/search', searchRoutes);
 
-// All remaining requests return the React app, so it can handle routing.
-app.get('*', function(request, response) {
-  response.sendFile(path.join(CLIENT_BUILD_PATH, 'index.html'));
-});
 
 const server = http.createServer(app);
 

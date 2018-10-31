@@ -7,6 +7,9 @@ const quizSchema = mongoose.Schema({
   description: { type: String, required: true },
   tags: { type: String, required: true },
   quizImage: { type: String, required: true },
+  totalPlays: { type: Number, required: false, default: 1 },
+  totalViews: { type: Number, required: false },
+  rating: { type: String, required: false }
 });
 
 module.exports = mongoose.model('Quiz', quizSchema);
