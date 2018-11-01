@@ -8,6 +8,9 @@ const router = express.Router();
 // GET all quizzes
 router.get('/', QuizzesController.quizzesGetAll);
 
+// GET all featured quizzes
+router.get('/featured', QuizzesController.getAllFeaturedQuizzes);
+
 // GET quizzes by topic
 router.post('/quizzes-by-topic', QuizzesController.getQuizzesByTopic);
 
@@ -22,6 +25,10 @@ router.get('/:quizId', QuizzesController.retrieveQuiz);
 
 // Update quiz
 router.patch('/:quizId', checkAuth, QuizzesController.updateQuiz);
+
+// Update quiz analytics
+router.patch('/analytics/:quizId', QuizzesController.updateQuizAnalytics);
+
 
 // Delete quiz
 router.delete('/:quizId', checkAuth, QuizzesController.deleteQuiz);

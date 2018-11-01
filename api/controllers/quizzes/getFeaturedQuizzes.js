@@ -1,13 +1,11 @@
 const Quiz = require('../../models/quiz');
 
-exports.getAllQuizzesByTopic = (req, res) => {
-  console.log(req.body.skipIterator)
-  Quiz.find(({"tags" : { $regex : new RegExp('^' + req.body.topic + '$', 'i') } }))
-    .skip(req.body.skipIterator)
-    .limit(8)
+exports.getAllFeaturedQuizzes = (req, res) => {
+  Quiz.find()
+    .sort('-totalPlays')
+    .limit(5)
     .exec()
     .then((quizzes) => {
-      console.log(quizzes)
       const response = {
         count: quizzes.length,
         quizzes: quizzes.map((quiz) => {
@@ -18,6 +16,7 @@ exports.getAllQuizzesByTopic = (req, res) => {
             description: quiz.description,
             tags: quiz.tags,
             quizImage: quiz.quizImage,
+            totalPlays: quiz.totalPlays,
             request: {
               type: 'GET',
               url: `http://localhost:3001/quizzes/${quiz._id}`,
