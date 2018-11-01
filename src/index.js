@@ -39,7 +39,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
-  var allowedOrigins = ['http://localhost:3000', 'http://127.0.0.1:8081'];
+  var allowedOrigins = ['http://localhost:3000', 'http://127.0.0.1:8081', 'https://www.quizop.com/'];
   var origin = req.headers.origin;
   if (allowedOrigins.indexOf(origin) > -1){
     res.setHeader('Access-Control-Allow-Origin', origin);
