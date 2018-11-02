@@ -60,6 +60,12 @@ app.use('/tags', tagRoutes);
 app.use('/time', timeRoutes);
 app.use('/search', searchRoutes);
 
+app.use(function(req, res){
+  res.status(404).json({
+    error: 'The requested url was not found'
+  })
+});
+
 
 const server = http.createServer(app);
 
