@@ -61,7 +61,7 @@ app.use('/time', timeRoutes);
 app.use('/search', searchRoutes);
 
 app.use(function(req, res){
-  res.status(404).json({
+  res.status(200).json({
     error: 'The requested url was not found'
   })
 });
