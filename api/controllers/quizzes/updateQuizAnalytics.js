@@ -6,7 +6,7 @@ exports.updateQuizAnalytics = (req, res) => {
   console.log(id)
 
   // total plays
-  Quiz.findByIdAndUpdate(id, { $inc: { totalPlays: 1 }}, {upsert: true}, function(err, data){
+  Quiz.findByIdAndUpdate(id, { $inc: { totalPlays: 1 }}, {upsert: true, 'new': true}, function(err, data){
     if (!err) {
       res.status(200).json({
         data,

@@ -19,12 +19,16 @@ exports.login = (req, res) => {
           });
         }
         if (result) {
+          console.log(user)
           const token = jwt.sign(
             {
               email: user.email,
               userId: user._id,
               name: user.name,
-              customizedTags: user.customizedTags
+              customizedTags: user.customizedTags,
+              overallScore: user.overallScore,
+              numberOfPerfectScores: user.numberOfPerfectScores,
+              points: user.points
             },
             process.env.JWT_KEY,
             {
@@ -36,7 +40,10 @@ exports.login = (req, res) => {
             email: user.email,
             customizedTags: user.customizedTags,
             name: user.name,
-            userId: user._id
+            userId: user._id,
+            overallScore: user.overallScore,
+            numberOfPerfectScores: user.numberOfPerfectScores,
+            points: user.points
           });
         }
         return res.status(401).json({

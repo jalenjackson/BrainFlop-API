@@ -7,7 +7,6 @@ exports.getAllQuizzesByTopic = (req, res) => {
     .limit(8)
     .exec()
     .then((quizzes) => {
-      console.log(quizzes)
       const response = {
         count: quizzes.length,
         quizzes: quizzes.map((quiz) => {
