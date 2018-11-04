@@ -3,3 +3,5 @@ exports.login = require('./users/login').login;
 exports.deleteUser = require('./users/deleteUser').deleteUser;
 exports.updateCustomizedTags = require('./users/updateCustomizedTags').updateCustomizedTags;
 exports.updateUserAnalytics = require('./users/updateUserAnalytics').updateUserAnalytics;
+exports.editUser = require('./users/editUser').editUser;
+exports.getUser = require('./users/getUser').getUser;

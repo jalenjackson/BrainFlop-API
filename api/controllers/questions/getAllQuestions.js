@@ -1,14 +1,17 @@
 const Question = require('../../models/questions');
 const he = require('he')
+const readingTime = require('reading-time');
 
 exports.getAllQuestions = (req, res) => {
   Question.find({ quiz: { $eq: req.body.quizId } })
     .select('-__v')
     .exec()
     .then((questions) => {
+      let filteredQuestions = shuffle(questions).splice(0, 10)
       res.status(200).json({
         count: questions.length,
-        questions: questions.map((question) => {
+        questions: filteredQuestions.map((question) => {
+          console.log()
           return {
             _id: question._id,
             quiz: question.quiz,
@@ -18,6 +21,7 @@ exports.getAllQuestions = (req, res) => {
             answer3: he.decode(question.answer3),
             answer4: he.decode(question.answer4),
             questionImage: question.questionImage,
+            timeToRead: readingTime(question.question).time,
             request: {
               type: 'GET',
               url: `http://localhost:3001/questions/${question._id}`,
@@ -32,3 +36,14 @@ exports.getAllQuestions = (req, res) => {
       });
     });
 };
+
+function shuffle (a) {
+  let j, x, i
+  for (i = a.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1))
+    x = a[i]
+    a[i] = a[j]
+    a[j] = x
+  }
+  return a
+}

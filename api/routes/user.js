@@ -6,11 +6,17 @@ const UsersController = require('../controllers/usersController');
 // Sign up
 router.post('/signup', UsersController.signUp);
 
+// GET user
+router.post('/get-user', UsersController.getUser);
+
 // Update customized tags
 router.post('/update-customized-tags', checkAuth, UsersController.updateCustomizedTags);
 
 // Update user analytics
 router.post('/analytics', checkAuth, UsersController.updateUserAnalytics);
+
+// Update user
+router.post('/edit', checkAuth, UsersController.editUser);
 
 // Delete user
 router.delete('/:userId', checkAuth, UsersController.deleteUser);

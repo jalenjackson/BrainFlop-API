@@ -1,0 +1,65 @@
+const mongoose = require('mongoose');
+const User = require('../../models/user');
+const jwt = require('jsonwebtoken');
+const _ = require('underscore');
+const bcrypt = require('bcrypt');
+let objectToSet = null;
+
+exports.editUser = (req, res) => {
+  return bcrypt.hash(req.body.password, 10, (error, hash) => {
+    if (error) {
+      return res.status(500).json({
+        error,
+      });
+    }
+
+    if (!req.body.password) {
+      hash = ''
+    }
+
+    console.log(hash)
+
+    const data = {
+      name: req.body.name,
+      email: req.body.email,
+      password: hash
+    }
+
+    console.log(data)
+
+    Object.keys(data).forEach((key) => (data[key] === '') && delete data[key]);
+
+    console.log(data)
+
+    User.findOneAndUpdate(
+      { _id: req.body.userId },
+      { $set: data },
+      {upsert: true, 'new': true},
+      (err, user) => {
+        if (err) {
+          return res.status(500).json({
+            error,
+          });
+        }
+        const token = jwt.sign(
+          {
+            email: user.email,
+            userId: user._id,
+            name: user.name,
+            customizedTags: user.customizedTags,
+            overallScore: user.overallScore,
+            numberOfPerfectScores: user.numberOfPerfectScores,
+            points: user.points
+          },
+          process.env.JWT_KEY,
+          {
+            expiresIn: '2w',
+          },
+        );
+        res.status(201).json({
+          token
+        });
+      },
+    )
+  })
+};
