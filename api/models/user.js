@@ -10,8 +10,8 @@ const userSchema = mongoose.Schema({
   },
   customizedTags: { type: String, required: true },
   name: { type: String, required: true },
-  overallScore: { type: String, required: false },
-  numberOfPerfectScores: { type: Number, required: false, default: 1 },
+  overallScore: { type: String, required: false, default: '0/0' },
+  numberOfPerfectScores: { type: Number, required: false, default: 0 },
   points: { type: Number, required: false, default: 0 },
   password: { type: String, required: true },
 });

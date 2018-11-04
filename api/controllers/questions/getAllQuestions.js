@@ -1,4 +1,5 @@
 const Question = require('../../models/questions');
+const he = require('he')
 
 exports.getAllQuestions = (req, res) => {
   Question.find({ quiz: { $eq: req.body.quizId } })
@@ -11,11 +12,11 @@ exports.getAllQuestions = (req, res) => {
           return {
             _id: question._id,
             quiz: question.quiz,
-            question: question.question,
-            answer1: question.answer1,
-            answer2: question.answer2,
-            answer3: question.answer3,
-            answer4: question.answer4,
+            question: he.decode(question.question),
+            answer1: he.decode(question.answer1),
+            answer2: he.decode(question.answer2),
+            answer3: he.decode(question.answer3),
+            answer4: he.decode(question.answer4),
             questionImage: question.questionImage,
             request: {
               type: 'GET',

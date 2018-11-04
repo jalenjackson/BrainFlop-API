@@ -22,6 +22,9 @@ exports.signup = (req, res) => {
           _id: mongoose.Types.ObjectId(),
           email: req.body.email,
           customizedTags: 'none',
+          overallScore: '0/0',
+          numberOfPerfectScores: 0,
+          points: 0,
           name: req.body.name,
           password: hash,
         });
@@ -33,7 +36,10 @@ exports.signup = (req, res) => {
                 email: user.email,
                 userId: user._id,
                 name: user.name,
-                customizedTags: user.customizedTags
+                customizedTags: user.customizedTags,
+                overallScore: user.overallScore,
+                numberOfPerfectScores: user.numberOfPerfectScores,
+                points: user.points,
               },
               process.env.JWT_KEY,
               {
@@ -47,6 +53,9 @@ exports.signup = (req, res) => {
               email: user.email,
               name: user.name,
               customizedTags: user.customizedTags,
+              overallScore: user.overallScore,
+              numberOfPerfectScores: user.numberOfPerfectScores,
+              points: user.points,
               token,
             });
           })

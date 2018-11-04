@@ -49,7 +49,8 @@ exports.updateUserAnalytics = (req, res) => {
                 name: user.name,
                 customizedTags: user.customizedTags,
                 overallScore: user.overallScore,
-                numberOfPerfectScores: user.numberOfPerfectScores
+                numberOfPerfectScores: user.numberOfPerfectScores,
+                points: user.points
               },
               process.env.JWT_KEY,
               {

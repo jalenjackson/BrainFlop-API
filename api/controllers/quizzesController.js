@@ -7,3 +7,4 @@ exports.deleteQuiz = require('./quizzes/deleteQuiz').deleteQuiz;
 exports.createNewQuizFromAPI = require('./quizzes/createQuizFromAPI').createNewQuizFromAPI;
 exports.updateQuizAnalytics = require('./quizzes/updateQuizAnalytics').updateQuizAnalytics;
 exports.getAllFeaturedQuizzes = require('./quizzes/getFeaturedQuizzes').getAllFeaturedQuizzes;
+exports.getAllUserQuizzes = require('./quizzes/getAllUserQuizzes').getAllUserQuizzes;
