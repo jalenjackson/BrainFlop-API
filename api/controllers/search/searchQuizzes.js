@@ -4,7 +4,7 @@ exports.searchQuizzes = (req, res) => {
   console.log(req.query)
 
   var regex = new RegExp(req.query["term"], 'i');
-  var query = Quiz.find({title: regex}, { 'quizImage': 1, 'title': 1, 'description': 1, 'tags': 1})
+  var query = Quiz.find({$or:[{title: regex},{tags: regex},{description: regex}]}, { 'quizImage': 1, 'title': 1, 'description': 1, 'tags': 1})
     .skip(Number(req.query["skipIterator"]))
     .sort({"updated_at":-1})
     .sort({"created_at":-1})
