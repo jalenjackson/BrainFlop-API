@@ -9,5 +9,8 @@ router.get('/questions', SearchController.searchQuestions);
 // search all tags
 router.get('/tags', SearchController.searchTags);
 
+// search all quizzes
+router.get('/quizzes', SearchController.searchQuizzes);
+
 
 module.exports = router;
