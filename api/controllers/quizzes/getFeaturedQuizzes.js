@@ -3,7 +3,8 @@ const Quiz = require('../../models/quiz');
 exports.getAllFeaturedQuizzes = (req, res) => {
   Quiz.find()
     .sort('-totalPlays')
-    .limit(5)
+    .skip(Number(req.query.skip))
+    .limit(Number(req.query.limit))
     .exec()
     .then((quizzes) => {
       const response = {
