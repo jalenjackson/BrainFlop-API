@@ -6,6 +6,9 @@ const UsersController = require('../controllers/usersController');
 // Sign up
 router.post('/signup', UsersController.signUp);
 
+// Facebook authentication
+router.post('/facebook', UsersController.facebookAuthentication);
+
 // GET user
 router.post('/get-user', UsersController.getUser);
 

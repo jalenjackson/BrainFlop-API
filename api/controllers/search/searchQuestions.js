@@ -1,9 +1,8 @@
 const Question = require('../../models/questions');
 
 exports.searchQuestions = (req, res) => {
-  console.log(req.query)
-
-  var regex = new RegExp(req.query["term"], 'i');
+  const q = req.query["term"].replace(/[^a-zA-Z0-9 ]/g, '');
+  var regex = new RegExp(q, 'i');
   var query = Question.find({question: regex}, { 'question': 1, 'answer1': 1, 'answer2': 1, 'answer3': 1, 'answer4': 1 }).sort({"updated_at":-1}).sort({"created_at":-1}).limit(20);
 
   query.exec(function(err, questionsFound) {

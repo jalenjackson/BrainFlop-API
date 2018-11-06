@@ -1,7 +1,8 @@
 const Tag = require('../../models/tags');
 
 exports.searchTags = (req, res) => {
-  var regex = new RegExp(req.query["term"], 'i');
+  const q = req.query["term"].replace(/[^a-zA-Z0-9 ]/g, '');
+  var regex = new RegExp(q, 'i');
   var query = Tag.find({name: regex}, { 'name': 1, 'count': 1 }).sort({"updated_at":-1}).sort({"created_at":-1}).limit(7);
 
   query.exec(function(err, tags) {

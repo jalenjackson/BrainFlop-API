@@ -30,10 +30,7 @@ exports.login = (req, res) => {
               numberOfPerfectScores: user.numberOfPerfectScores,
               points: user.points
             },
-            process.env.JWT_KEY,
-            {
-              expiresIn: '2w',
-            },
+            process.env.JWT_KEY
           );
           return res.status(200).json({
             token,

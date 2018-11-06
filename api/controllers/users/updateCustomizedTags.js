@@ -22,10 +22,7 @@ exports.updateCustomizedTags = (req, res) => {
           name: userObject.name,
           customizedTags: userObject.customizedTags,
         },
-        process.env.JWT_KEY,
-        {
-          expiresIn: '2w',
-        },
+        process.env.JWT_KEY
       );
       res.status(200).json({
         token

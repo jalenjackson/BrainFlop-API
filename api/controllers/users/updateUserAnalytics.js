@@ -52,10 +52,7 @@ exports.updateUserAnalytics = (req, res) => {
                 numberOfPerfectScores: user.numberOfPerfectScores,
                 points: user.points
               },
-              process.env.JWT_KEY,
-              {
-                expiresIn: '2w',
-              },
+              process.env.JWT_KEY
             );
             res.status(201).json({
               message: 'Overall score updated',
