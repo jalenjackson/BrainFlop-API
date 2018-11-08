@@ -2,13 +2,11 @@ const Quiz = require('../../models/quiz');
 const User = require('../../models/user');
 
 exports.getAllUserQuizzes = (req, res) => {
-  console.log(req.body.userId)
   Quiz.find({ 'userId': req.body.userId })
     .skip(req.body.skipIterator)
     .limit(8)
     .exec()
     .then((quizzes) => {
-      console.log(quizzes)
       const response = {
         count: quizzes.length,
         quizzes: quizzes.map((quiz) => {
