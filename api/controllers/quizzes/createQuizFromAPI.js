@@ -55,7 +55,7 @@ exports.createNewQuizFromAPI = (req, res) => {
       return quiz.save();
     })
     .then((result) => {
-      request('https://opentdb.com/api.php?amount=10&category=19&type=multiple', (error, response, body) => {
+      request(req.body.questionAPI, (error, response, body) => {
         questions = JSON.parse(body).results;
 
         for (var i = 0; i < questions.length; i++) {

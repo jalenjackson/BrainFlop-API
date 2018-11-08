@@ -21,6 +21,9 @@ exports.updateCustomizedTags = (req, res) => {
           userId: userObject._id,
           name: userObject.name,
           customizedTags: userObject.customizedTags,
+          overallScore: userObject.overallScore,
+          numberOfPerfectScores: userObject.numberOfPerfectScores,
+          points: userObject.points
         },
         process.env.JWT_KEY
       );
