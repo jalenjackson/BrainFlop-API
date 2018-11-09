@@ -1,13 +1,16 @@
 const Question = require('../../models/questions');
 const he = require('he')
 const readingTime = require('reading-time');
+let filteredQuestions = null;
 
 exports.getAllQuestions = (req, res) => {
   Question.find({ quiz: { $eq: req.body.quizId } })
     .select('-__v')
     .exec()
     .then((questions) => {
-      let filteredQuestions = shuffle(questions).splice(0, 10)
+      req.body.usingForEdit
+      ? filteredQuestions = shuffle(questions)
+      : filteredQuestions = shuffle(questions).splice(0, 10);
       res.status(200).json({
         count: questions.length,
         questions: filteredQuestions.map((question) => {

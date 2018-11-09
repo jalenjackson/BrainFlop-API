@@ -8,6 +8,7 @@ exports.updateCustomizedTags = (req, res) => {
   User.findOneAndUpdate(
     { email: req.userData.email },
     { $set: { customizedTags: req.body.tags } },
+    {upsert: true, 'new': true},
     (err, documents) => {
       userObject = documents;
       if (err) throw err;
@@ -28,7 +29,8 @@ exports.updateCustomizedTags = (req, res) => {
         process.env.JWT_KEY
       );
       res.status(200).json({
-        token
+        token,
+        userObject
       });
     })
     .catch((err) => {
