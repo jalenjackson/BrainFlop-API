@@ -6,7 +6,6 @@ exports.getUser = (req, res) => {
   User.findById(id)
     .exec()
     .then((user) => {
-      console.log(user)
       if (user) {
         // On Quiz Found
         res.status(200).json({

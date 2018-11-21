@@ -56,7 +56,15 @@ exports.updateUserAnalytics = (req, res) => {
             );
             res.status(201).json({
               message: 'Overall score updated',
-              user,
+              user: {
+                email: user.email,
+                userId: user._id,
+                name: user.name,
+                customizedTags: user.customizedTags,
+                overallScore: user.overallScore,
+                numberOfPerfectScores: user.numberOfPerfectScores,
+                points: user.points
+              },
               token
             });
           })

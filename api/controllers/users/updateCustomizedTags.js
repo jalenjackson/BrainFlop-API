@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const User = require('../../models/user');
 const jwt = require('jsonwebtoken');
 const _ = require('underscore');
@@ -30,11 +29,18 @@ exports.updateCustomizedTags = (req, res) => {
       );
       res.status(200).json({
         token,
-        userObject
+        userObject: {
+          email: userObject.email,
+          userId: userObject._id,
+          name: userObject.name,
+          customizedTags: userObject.customizedTags,
+          overallScore: userObject.overallScore,
+          numberOfPerfectScores: userObject.numberOfPerfectScores,
+          points: userObject.points
+        }
       });
     })
     .catch((err) => {
-      console.log(err)
       res.status(500).json({
         err,
       });

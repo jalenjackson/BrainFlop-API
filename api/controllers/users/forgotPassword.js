@@ -32,21 +32,20 @@ exports.forgotPassword = (req, res) => {
         service: 'Gmail',
         auth: {
           user: 'brainflop@brainflop.com',
-          pass: 'Bigship1!'
+          pass: process.env.GMAIL_PW
         }
       });
       var mailOptions = {
         to: user.email,
         from: 'brainflop@brainflop.com',
         subject: 'BrainFlop Password Reset',
-        text: `You are receiving this because you have requested the reset of the password associated with the Winly account ${user.email}.\n
+        text: `You are receiving this because you have requested the reset of the password associated with the BrainFlop account ${user.email}.\n
           Please click the following link, or paste into your browser to complete the forgot password process.\n 
           http://${req.headers.host}/reset/${token}\n\n
           if you did not request this, please ignore this email and your password will remain unchanged.
         `
       };
       smtpTransport.sendMail(mailOptions, function(err) {
-        console.log('mail sent!');
         return res.status(200).json({
           message: 'Forgot password email has been successfully sent!'
         })
