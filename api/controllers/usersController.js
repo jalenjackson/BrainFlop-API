@@ -6,3 +6,5 @@ exports.updateUserAnalytics = require('./users/updateUserAnalytics').updateUserA
 exports.editUser = require('./users/editUser').editUser;
 exports.facebookAuthentication = require('./users/facebookAuthentication').facebookAuthentication;
 exports.getUser = require('./users/getUser').getUser;
+exports.forgotPassword = require('./users/forgotPassword').forgotPassword;
+exports.forgotPasswordChange = require('./users/forgotPasswordChange').forgotPaswordChange;

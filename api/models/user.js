@@ -14,6 +14,8 @@ const userSchema = mongoose.Schema({
   numberOfPerfectScores: { type: Number, required: false, default: 0 },
   points: { type: Number, required: false, default: 0 },
   password: { type: String, required: true },
+  resetPasswordToken: { type: String, required: false },
+  resetPasswordExpiresIn: { type: Date, required: false }
 });
 
 module.exports = mongoose.model('User', userSchema);

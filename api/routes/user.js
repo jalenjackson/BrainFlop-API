@@ -12,6 +12,12 @@ router.post('/facebook', UsersController.facebookAuthentication);
 // GET user
 router.post('/get-user', UsersController.getUser);
 
+// Forgot password
+router.post('/forgot', UsersController.forgotPassword);
+
+// Forgot Password Change
+router.post('/forgot/:token', UsersController.forgotPasswordChange);
+
 // Update customized tags
 router.post('/update-customized-tags', checkAuth, UsersController.updateCustomizedTags);
 
