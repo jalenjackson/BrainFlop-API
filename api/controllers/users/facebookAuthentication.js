@@ -52,6 +52,7 @@ exports.facebookAuthentication = (req, res) => {
               overallScore: user.overallScore,
               numberOfPerfectScores: user.numberOfPerfectScores,
               points: user.points,
+              newUser: false
             },
             process.env.JWT_KEY
           );
@@ -65,6 +66,7 @@ exports.facebookAuthentication = (req, res) => {
             overallScore: user.overallScore,
             numberOfPerfectScores: user.numberOfPerfectScores,
             points: user.points,
+            newUser: true,
             token,
           });
         })
