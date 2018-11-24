@@ -9,7 +9,7 @@ exports.getAllQuestions = (req, res) => {
     .exec()
     .then((questions) => {
       req.body.usingForEdit
-      ? filteredQuestions = shuffle(questions)
+      ? filteredQuestions = questions
       : filteredQuestions = shuffle(questions).splice(0, 10);
       res.status(200).json({
         count: questions.length,
