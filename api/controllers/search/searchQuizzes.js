@@ -7,7 +7,7 @@ exports.searchQuizzes = (req, res) => {
     .skip(Number(req.query["skipIterator"]))
     .sort({"updated_at":-1})
     .sort({"created_at":-1})
-    .limit(6);
+    .limit(9);
 
   query.exec(function(err, quizzesFound) {
     if (!err) {
