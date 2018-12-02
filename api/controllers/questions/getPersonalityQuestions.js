@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
 const Question = require('../../models/questions');
-const Quiz = require('../../models/quiz');
 
 exports.getPersonalityQuestions = (req, res) => {
   Question.find({ quiz: { $eq: req.body.quizId } })
@@ -9,7 +7,7 @@ exports.getPersonalityQuestions = (req, res) => {
       .then((questions) => {
 
         res.status(200).json({
-          questions: questions.map((question) => {
+          questions: shuffle(questions).map((question) => {
             return {
               _id: question._id,
               quiz: question.quiz,
@@ -25,4 +23,16 @@ exports.getPersonalityQuestions = (req, res) => {
           error,
         });
       });
+}
+
+
+function shuffle (a) {
+  let j, x, i
+  for (i = a.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1))
+    x = a[i]
+    a[i] = a[j]
+    a[j] = x
+  }
+  return a
 }

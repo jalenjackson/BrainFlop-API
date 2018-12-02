@@ -17,6 +17,7 @@ exports.getAllQuizzesByTopic = (req, res) => {
             description: quiz.description,
             tags: quiz.tags,
             quizImage: quiz.quizImage,
+            personalityResults: quiz.personalityResults,
             request: {
               type: 'GET',
               url: `http://localhost:3001/quizzes/${quiz._id}`,

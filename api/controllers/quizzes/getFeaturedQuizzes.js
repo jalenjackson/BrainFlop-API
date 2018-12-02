@@ -1,7 +1,7 @@
 const Quiz = require('../../models/quiz');
 
 exports.getAllFeaturedQuizzes = (req, res) => {
-  Quiz.find()
+  Quiz.find(({ 'personalityResults': { $exists: false } }))
     .sort('-totalPlays')
     .skip(Number(req.query.skip))
     .limit(Number(req.query.limit))
