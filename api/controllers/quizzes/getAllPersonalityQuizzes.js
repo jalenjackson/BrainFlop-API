@@ -2,7 +2,8 @@ const Quiz = require('../../models/quiz');
 
 exports.getAllPersonalityQuizzes = (req, res) => {
   Quiz.find({ 'personalityResults': { $exists: true } })
-      .select('-__v')
+      .skip(req.body.skipIterator)
+      .limit(8)
       .exec()
       .then((quizzes) => {
         const response = {
