@@ -10,3 +10,5 @@ exports.getAllFeaturedQuizzes = require('./quizzes/getFeaturedQuizzes').getAllFe
 exports.getAllUserQuizzes = require('./quizzes/getAllUserQuizzes').getAllUserQuizzes;
 exports.createPersonalityQuestionResult = require('./quizzes/createPersonalityQuestionResult').createPersonalityQuestionResult;
 exports.removePersonalityQuestionResult = require('./quizzes/removePersonalityQuestionResult').removePersonalityQuestionResult
+exports.getAllPersonalityQuizzes = require('./quizzes/getAllPersonalityQuizzes').getAllPersonalityQuizzes
+

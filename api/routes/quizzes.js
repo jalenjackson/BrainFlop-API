@@ -11,6 +11,9 @@ router.get('/', QuizzesController.quizzesGetAll);
 // GET all featured quizzes
 router.get('/featured', QuizzesController.getAllFeaturedQuizzes);
 
+// GET all personality quizzes
+router.get('/personality-quizzes', QuizzesController.getAllPersonalityQuizzes);
+
 // GET all user quizzes
 router.post('/user-quizzes', QuizzesController.getAllUserQuizzes);
 
