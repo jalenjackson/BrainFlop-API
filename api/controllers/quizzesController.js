@@ -8,3 +8,5 @@ exports.createNewQuizFromAPI = require('./quizzes/createQuizFromAPI').createNewQ
 exports.updateQuizAnalytics = require('./quizzes/updateQuizAnalytics').updateQuizAnalytics;
 exports.getAllFeaturedQuizzes = require('./quizzes/getFeaturedQuizzes').getAllFeaturedQuizzes;
 exports.getAllUserQuizzes = require('./quizzes/getAllUserQuizzes').getAllUserQuizzes;
+exports.createPersonalityQuestionResult = require('./quizzes/createPersonalityQuestionResult').createPersonalityQuestionResult;
+exports.removePersonalityQuestionResult = require('./quizzes/removePersonalityQuestionResult').removePersonalityQuestionResult

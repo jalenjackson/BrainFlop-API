@@ -14,8 +14,14 @@ router.get('/featured', QuizzesController.getAllFeaturedQuizzes);
 // GET all user quizzes
 router.post('/user-quizzes', QuizzesController.getAllUserQuizzes);
 
+// remove Personality result
+router.post('/remove-personality-result', QuizzesController.removePersonalityQuestionResult);
+
 // GET quizzes by topic
 router.post('/quizzes-by-topic', QuizzesController.getQuizzesByTopic);
+
+// Add new personality result
+router.post('/personality-question-results', checkAuth, QuizzesController.createPersonalityQuestionResult);
 
 // Create new Quiz
 router.post('/', checkAuth, upload.single('quizImage'), QuizzesController.createNewQuiz);
