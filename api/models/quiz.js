@@ -10,7 +10,8 @@ const quizSchema = mongoose.Schema({
   totalPlays: { type: Number, required: false, default: 1 },
   totalViews: { type: Number, required: false },
   rating: { type: String, required: false },
-  personalityResults: { type: Array, required: false }
+  personalityResults: { type: Array, required: false },
+  personalityResultsLength: { type: Number, required: false }
 });
 
 module.exports = mongoose.model('Quiz', quizSchema);

@@ -25,11 +25,13 @@ exports.updateUserAnalytics = (req, res) => {
           overallScore = null
         }
 
-        if (points) {
+        if (points || points === 0) {
           points = user.points
             ? user.points + points
             : points
         }
+
+        console.log(points)
 
         const objectToSet = isPerfectScore
           ? { $inc: { numberOfPerfectScores: 1 } }
