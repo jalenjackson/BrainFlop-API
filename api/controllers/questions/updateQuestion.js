@@ -1,7 +1,6 @@
 const Question = require('../../models/questions');
 
 exports.updateQuestion = (req, res) => {
-  console.log(req.body)
   const id = req.params.questionId;
   Question.updateMany({ _id: id }, {
     $set: {

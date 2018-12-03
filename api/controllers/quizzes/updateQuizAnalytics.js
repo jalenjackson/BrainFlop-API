@@ -2,9 +2,6 @@ const Quiz = require('../../models/quiz');
 
 exports.updateQuizAnalytics = (req, res) => {
   const id = req.params.quizId;
-
-  console.log(id)
-
   // total plays
   Quiz.findByIdAndUpdate(id, { $inc: { totalPlays: 1 }}, {upsert: true, 'new': true}, function(err, data){
     if (!err) {

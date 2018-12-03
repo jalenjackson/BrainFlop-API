@@ -43,7 +43,6 @@ pdfParser.on("pdfParser_dataReady", pdfData => {
         "answer4": txt[iterator + 4]
       }
       iterator += 5
-      console.log(tmpObject)
     }
 
 

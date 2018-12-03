@@ -9,11 +9,9 @@ exports.removePersonalityQuestionResult = (req, res) => {
       .then((quiz) => {
         if (quiz) {
           const personalityResults = quiz.personalityResults
-          console.log(req.body.resultId)
           let tmpArray = personalityResults.filter((result) => {
             return result.id !== req.body.resultId
           })
-          console.log(tmpArray)
 
           Quiz.updateOne(
               { _id: id },

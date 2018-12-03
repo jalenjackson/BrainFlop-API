@@ -14,7 +14,6 @@ exports.getAllQuestions = (req, res) => {
       res.status(200).json({
         count: questions.length,
         questions: filteredQuestions.map((question) => {
-          console.log()
           return {
             _id: question._id,
             quiz: question.quiz,

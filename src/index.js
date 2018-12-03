@@ -27,7 +27,6 @@ app.use(express.static(CLIENT_BUILD_PATH));
 // Instantiate Express
 
 // Connect to MongoDB Database
-console.log(process.env.MONGODB_URL)
 mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
 });

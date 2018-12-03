@@ -1,7 +1,6 @@
 const Quiz = require('../../models/quiz');
 
 exports.getAllQuizzesByTopic = (req, res) => {
-  console.log(req.body.skipIterator)
   Quiz.find(({"tags" : { $regex : new RegExp('^' + req.body.topic + '$', 'i') } }))
     .skip(req.body.skipIterator)
     .limit(8)

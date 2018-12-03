@@ -6,7 +6,6 @@ exports.login = (req, res) => {
   User.findOne({ email: req.body.email })
     .exec()
     .then((user) => {
-      console.log(user)
       if (!user) {
         return res.status(401).json({
           message: 'Authorization failed',
@@ -19,7 +18,6 @@ exports.login = (req, res) => {
           });
         }
         if (result) {
-          console.log(user)
           const token = jwt.sign(
             {
               email: user.email,

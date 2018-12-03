@@ -17,7 +17,6 @@ exports.editUser = (req, res) => {
       hash = ''
     }
 
-    console.log(hash)
 
     const data = {
       name: req.body.name,
@@ -25,11 +24,9 @@ exports.editUser = (req, res) => {
       password: hash
     }
 
-    console.log(data)
 
     Object.keys(data).forEach((key) => (data[key] === '') && delete data[key]);
 
-    console.log(data)
 
     User.findOneAndUpdate(
       { _id: req.body.userId },

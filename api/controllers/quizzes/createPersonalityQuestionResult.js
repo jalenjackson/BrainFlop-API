@@ -10,7 +10,7 @@ exports.createPersonalityQuestionResult = (req, res) => {
       { $push: {'personalityResults': {id: req.body.referenceId, title: req.body.title }}},
       {upsert: true, 'new': true},
       (err, quiz) => {
-        console.log(quiz)
+        //console.log(quiz)
       }
   )
 

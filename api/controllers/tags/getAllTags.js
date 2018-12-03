@@ -7,7 +7,6 @@ exports.getAllTags = (req, res) => {
     .sort({ count: -1 })
     .exec()
     .then((tags) => {
-      console.log(tags)
       const response = {
         count: tags.length,
         tags: tags.map((tag) => {

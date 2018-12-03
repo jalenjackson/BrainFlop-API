@@ -2,7 +2,6 @@ const User = require('../../models/user');
 
 exports.getUser = (req, res) => {
   const id = req.body.userId;
-  console.log(id)
   User.findById(id)
     .exec()
     .then((user) => {

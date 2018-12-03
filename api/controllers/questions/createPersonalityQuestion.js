@@ -3,7 +3,6 @@ const Question = require('../../models/questions');
 const Quiz = require('../../models/quiz');
 
 exports.createPersonalityQuestion = (req, res) => {
-  console.log(req.body)
   if (!req.body.imageIncluded) {
     Quiz.findById(req.body.quizId)
         .then((quiz) => {
@@ -29,7 +28,6 @@ exports.createPersonalityQuestion = (req, res) => {
           });
         })
         .catch((err) => {
-          console.log(err)
           res.status(500).json({
             error: err,
           });

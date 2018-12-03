@@ -1,4 +1,3 @@
-console.log('Making question!');
 
 /*
   Sample response  from API
@@ -45,7 +44,6 @@ request('https://opentdb.com/api.php?amount=10&category=9&type=multiple', functi
 
     let results = JSON.parse(body).results;
 
-    console.log(results)
 
 
     /*

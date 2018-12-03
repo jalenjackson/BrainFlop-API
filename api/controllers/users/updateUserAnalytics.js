@@ -40,7 +40,6 @@ exports.updateUserAnalytics = (req, res) => {
           objectToSet,
           {upsert: !!isPerfectScore, 'new': true},
           (err, user) => {
-            console.log(user)
             if (err) throw err;
             const token = jwt.sign(
               {
@@ -75,7 +74,6 @@ exports.updateUserAnalytics = (req, res) => {
       }
     })
     .catch((error) => {
-      console.log(error)
       res.status(500).json({
         error,
       });

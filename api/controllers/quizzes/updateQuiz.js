@@ -3,8 +3,6 @@ const Quiz = require('../../models/quiz');
 exports.updateQuiz = (req, res) => {
   const id = req.params.quizId;
 
-  console.log(req.body)
-
   Quiz.updateMany({_id: id}, {
     $set: {
       title: req.body.title,
@@ -23,7 +21,6 @@ exports.updateQuiz = (req, res) => {
       });
     })
     .catch((err) => {
-      console.log(err)
       res.status(500).json({
         error: err,
       });
