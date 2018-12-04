@@ -3,9 +3,10 @@ const Quiz = require('../../models/quiz');
 exports.getAllQuizzesByTopic = (req, res) => {
   Quiz.find(({"tags" : { $regex : new RegExp('^' + req.body.topic + '$', 'i') } }))
     .skip(req.body.skipIterator)
-    .limit(8)
+    .limit(req.query.limit ? Number(req.query.limit) : 9)
     .exec()
     .then((quizzes) => {
+      console.log(req.query.limit)
       const response = {
         count: quizzes.length,
         quizzes: quizzes.map((quiz) => {
