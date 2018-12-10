@@ -51,7 +51,16 @@ exports.editUser = (req, res) => {
           process.env.JWT_KEY
         );
         res.status(201).json({
-          token
+          token,
+          user: {
+            email: user.email,
+            userId: user._id,
+            name: user.name,
+            customizedTags: user.customizedTags,
+            overallScore: user.overallScore,
+            numberOfPerfectScores: user.numberOfPerfectScores,
+            points: user.points
+          }
         });
       },
     )
