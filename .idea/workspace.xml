@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f51bfee-52ee-4feb-974b-c3f5b9be9161" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/api/controllers/users/editUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/users/editUser.js" afterDir="false" />
-    </list>
+    <list default="true" id="4f51bfee-52ee-4feb-974b-c3f5b9be9161" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,7 +15,7 @@
     <session id="-1698468001">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.4" value="1" />
@@ -109,7 +107,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="813" />
@@ -181,12 +179,12 @@
       <updated>1544338759373</updated>
       <workItem from="1544338760947" duration="3038000" />
       <workItem from="1544381345837" duration="597000" />
-      <workItem from="1544397860474" duration="741000" />
+      <workItem from="1544397860474" duration="1276000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4376000" />
+    <option name="totallyTimeSpent" value="4911000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
