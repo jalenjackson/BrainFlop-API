@@ -14,6 +14,7 @@ exports.getAllTags = (req, res) => {
             _id: tag._id,
             name: tag.name,
             count: tag.count,
+            image: tag.image ? tag.image : null
           };
         }),
       };
