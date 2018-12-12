@@ -10,11 +10,11 @@ exports.getAllTags = (req, res) => {
       const response = {
         count: tags.length,
         tags: tags.map((tag) => {
+          console.log(tag)
           return {
             _id: tag._id,
             name: tag.name,
             count: tag.count,
-            image: tag.image
           };
         }),
       };
