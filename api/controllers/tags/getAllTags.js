@@ -9,15 +9,7 @@ exports.getAllTags = (req, res) => {
     .then((tags) => {
       const response = {
         count: tags.length,
-        tags: tags.map((tag) => {
-          console.log(tag.image)
-          return {
-            _id: tag._id,
-            name: tag.name,
-            count: tag.count,
-            image: tag.image
-          };
-        }),
+        tags
       };
       res.status(200).json(response);
     })
