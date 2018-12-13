@@ -12,6 +12,7 @@ const userRoutes = require('../api/routes/user');
 const tagRoutes = require('../api/routes/tags');
 const timeRoutes = require('../api/routes/time');
 const searchRoutes = require('../api/routes/search');
+const blogRoutes = require('../api/routes/blog');
 
 // Constants
 const PORT = process.env.PORT || 8080;
@@ -57,6 +58,7 @@ app.use('/questions', questionRoutes);
 app.use('/users', userRoutes);
 app.use('/tags', tagRoutes);
 app.use('/time', timeRoutes);
+app.use('/blog', blogRoutes);
 app.use('/search', searchRoutes);
 
 app.use(function(req, res) {
