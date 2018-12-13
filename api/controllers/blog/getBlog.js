@@ -1,7 +1,7 @@
 const Blog = require('../../models/blog');
 
 exports.getBlog = (req, res) => {
-  const id = req.params.blogId;
+  const id = req.params.postId;
   Blog.findById(id)
     .select('-__v')
     .exec()
