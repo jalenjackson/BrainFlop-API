@@ -23,7 +23,7 @@ exports.getPersonalityQuestions = (req, res) => {
           error,
         });
       });
-}
+};
 
 
 function shuffle (a) {

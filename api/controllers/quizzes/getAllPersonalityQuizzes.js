@@ -10,7 +10,6 @@ exports.getAllPersonalityQuizzes = (req, res) => {
         const response = {
           count: quizzes.length,
           quizzes: quizzes.filter((quiz) => {
-            console.log(quiz)
             if (quiz && quiz._id) {
               return {
                 _id: quiz._id,

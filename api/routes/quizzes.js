@@ -41,6 +41,14 @@ router.patch('/:quizId', checkAuth, QuizzesController.updateQuiz);
 // Update quiz analytics
 router.patch('/analytics/:quizId', QuizzesController.updateQuizAnalytics);
 
+// Explore Data
+router.post('/explore', QuizzesController.exploreData);
+
+// Personality Quiz Game
+router.post('/personality-game', QuizzesController.personalityQuizGame);
+
+//Quiz Page
+router.post('/quiz-page', QuizzesController.quizPage);
 
 // Delete quiz
 router.delete('/:quizId', checkAuth, QuizzesController.deleteQuiz);

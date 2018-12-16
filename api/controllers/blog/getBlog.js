@@ -2,10 +2,12 @@ const Blog = require('../../models/blog');
 
 exports.getBlog = (req, res) => {
   const id = req.params.postId;
+  console.log(id)
   Blog.findById(id)
     .select('-__v')
     .exec()
     .then((blog) => {
+      console.log(blog)
       if (blog) {
         res.status(200).json({
           blog,
