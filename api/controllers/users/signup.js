@@ -68,7 +68,7 @@ exports.signup = (req, res) => {
               to: user.email,
               from: 'brainflop@brainflop.com',
               subject: 'Thanks for joining BrainFlop!',
-              text: `Hey ${user.name} thanks for joining BrainFlop! BrainFlop offers the best quizzing experience there is. Have fun quizzing! \n https://www.brainflop.com`
+              text: `Hey ${user.name} thanks for joining BrainFlop! BrainFlop offers the best quizzing experience there is. Have fun quizzing! \n https://brainflop.com`
             };
             smtpTransport.sendMail(mailOptions, function(err) {
               return res.status(200).json({

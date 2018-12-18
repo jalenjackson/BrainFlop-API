@@ -41,12 +41,10 @@ mongoose.connect('mongodb+srv://jalenjackson:kiHNDOvn8U22Q05U@quizopcluster-16sm
         cacheTime: 600000,        // 600 sec - cache purge period 
         urls: finalUrls
       });
-      console.log(sitemapData)
       sitemapData.toXML( function (err, xml) {
         if (err) {
           return res.status(500).end();
         }
-        console.log(xml)
 
         fs.writeFileSync("./sitemapindex.xml", xml);
       });
