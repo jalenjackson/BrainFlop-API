@@ -41,7 +41,7 @@ exports.forgotPassword = (req, res) => {
         subject: 'BrainFlop Password Reset',
         text: `You are receiving this because you have requested the reset of the password associated with the BrainFlop account ${user.email}.\n
           Please click the following link, or paste into your browser to complete the forgot password process.\n 
-          http://${req.headers.host}/reset/${token}\n\n
+          https://brainflop.com/reset/${token}\n\n
           if you did not request this, please ignore this email and your password will remain unchanged.
         `
       };

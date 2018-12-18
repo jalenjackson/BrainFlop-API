@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a235e624-a8de-431f-b51e-6e73a73735e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/controllers/generateSitemap.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/generateSitemap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/controllers/users/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/users/signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/users/forgotPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/users/forgotPassword.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,19 +24,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/controllers/users/forgotPassword.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1012">
-              <caret line="46" column="8" lean-forward="true" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+            <state relative-caret-position="347">
+              <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/controllers/users/signup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
+            <state relative-caret-position="1034">
               <caret line="68" column="44" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="44" />
             </state>
           </provider>
@@ -138,6 +135,7 @@
         <option value="$PROJECT_DIR$/api/controllers/generateSitemap.js" />
         <option value="$PROJECT_DIR$/api/controllers/quizzes/exploreData.js" />
         <option value="$PROJECT_DIR$/api/controllers/users/signup.js" />
+        <option value="$PROJECT_DIR$/api/controllers/users/forgotPassword.js" />
       </list>
     </option>
   </component>
@@ -222,12 +220,12 @@
       <workItem from="1544947003677" duration="213000" />
       <workItem from="1544951499926" duration="21000" />
       <workItem from="1544953671751" duration="9000" />
-      <workItem from="1545161346041" duration="2683000" />
+      <workItem from="1545161346041" duration="3072000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27444000" />
+    <option name="totallyTimeSpent" value="27833000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -513,17 +511,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/controllers/users/forgotPassword.js">
+    <entry file="file://$PROJECT_DIR$/api/controllers/users/signup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
-          <caret line="46" column="8" lean-forward="true" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+        <state relative-caret-position="1034">
+          <caret line="68" column="44" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/controllers/users/signup.js">
+    <entry file="file://$PROJECT_DIR$/api/controllers/users/forgotPassword.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="68" column="44" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="44" />
+        <state relative-caret-position="347">
+          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
         </state>
       </provider>
     </entry>
