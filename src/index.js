@@ -1,10 +1,9 @@
 require('dotenv').config()
 const express = require('express');
 const path = require('path');
-const logger = require('morgan');
+//const logger = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const aws = require('aws-sdk');
 const http = require('http');
 const quizRoutes = require('../api/routes/quizzes');
 const questionRoutes = require('../api/routes/questions');
@@ -16,7 +15,6 @@ const blogRoutes = require('../api/routes/blog');
 
 // Constants
 const PORT = process.env.PORT || 8080;
-const HOST = '0.0.0.0';
 
 const CLIENT_BUILD_PATH = path.join(__dirname, '../../client/build');
 
@@ -33,7 +31,7 @@ mongoose.connect(process.env.MONGODB_URL, {
 });
 
 // Set up middleware for CORS and allowing JSON in requests
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -71,8 +69,6 @@ app.use(function(req, res) {
 const server = http.createServer(app);
 
 server.listen(PORT);
-
-console.log('listening on ' + PORT)
 
 module.exports = app;
 

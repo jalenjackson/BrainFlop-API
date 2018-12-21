@@ -9,7 +9,6 @@ exports.createBlog = (req, res) => {
 
   blog.save()
       .then((res) => {
-        console.log(res)
       });
 
   return res.status(201).json({

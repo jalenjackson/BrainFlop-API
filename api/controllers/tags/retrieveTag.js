@@ -2,7 +2,6 @@ const Tag = require('../../models/tags');
 
 exports.retrieveTag = (req, res) => {
   const name = req.params.tagName.toLowerCase();
-  console.log(name)
   Tag.find({ name })
       .exec()
       .then((tag) => {

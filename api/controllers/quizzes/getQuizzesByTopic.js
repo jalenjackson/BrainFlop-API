@@ -6,7 +6,6 @@ exports.getAllQuizzesByTopic = (req, res) => {
     .limit(req.query.limit ? Number(req.query.limit) : 9)
     .exec()
     .then((quizzes) => {
-      console.log(req.query.limit)
       const response = {
         count: quizzes.length,
         quizzes: quizzes.map((quiz) => {
