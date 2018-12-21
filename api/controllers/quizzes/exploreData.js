@@ -3,7 +3,7 @@ const Tag = require('../../models/tags');
 
 exports.exploreData = async (req, res) => {
 
-  const featuredQuizzes = await Quiz.find(({ 'personalityResults': { $exists: false } })).sort('-totalPlays').limit(5);
+  const featuredQuizzes = await Quiz.find(({ 'personalityResultsLength': { $exists: false } })).sort('-totalPlays').limit(5);
   const personalityQuizzes = await Quiz.find({ 'personalityResultsLength': { $gt: 1 } }).sort('-totalPlays').limit(4);
   const featuredTopTags = await Tag.find(({ count: { $gt: 3 } })).sort({ count: -1 }).limit(8);
   const areThereUserDefinedTags = req.body.userTags;
