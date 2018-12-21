@@ -1,5 +1,6 @@
 const Quiz = require('../../models/quiz');
 const Tag = require('../../models/tags');
+const User = require('../../models/user');
 
 exports.exploreData = async (req, res) => {
 

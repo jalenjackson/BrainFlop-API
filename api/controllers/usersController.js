@@ -8,3 +8,4 @@ exports.facebookAuthentication = require('./users/facebookAuthentication').faceb
 exports.getUser = require('./users/getUser').getUser;
 exports.forgotPassword = require('./users/forgotPassword').forgotPassword;
 exports.forgotPasswordChange = require('./users/forgotPasswordChange').forgotPaswordChange;
+exports.getTopUsers = require('./users/getTopUsers').getTopUsers;

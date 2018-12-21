@@ -33,4 +33,8 @@ router.delete('/:userId', checkAuth, UsersController.deleteUser);
 // Sign In
 router.post('/login', UsersController.login);
 
+// Get top users
+router.get('/get-top-users', UsersController.getTopUsers);
+
+
 module.exports = router;
