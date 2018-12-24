@@ -36,5 +36,7 @@ router.post('/login', UsersController.login);
 // Get top users
 router.get('/get-top-users', UsersController.getTopUsers);
 
+//cta user
+router.post('/cta-user', UsersController.ctaUser);
 
 module.exports = router;

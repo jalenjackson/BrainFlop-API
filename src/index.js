@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express');
 const path = require('path');
-//const logger = require('morgan');
+const logger = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const http = require('http');
@@ -31,7 +31,7 @@ mongoose.connect(process.env.MONGODB_URL, {
 });
 
 // Set up middleware for CORS and allowing JSON in requests
-//app.use(logger('dev'));
+app.use(logger('dev'));
 app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
