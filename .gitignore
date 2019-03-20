@@ -1,5 +1,8 @@
 # dependencies
 /node_modules
 .idea
+.env
+docker-compose.prod.yml
+docker-compose.yml
 
 npm-debug.log*
