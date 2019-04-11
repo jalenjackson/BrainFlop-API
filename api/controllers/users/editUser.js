@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const User = require('../../models/user');
 const jwt = require('jsonwebtoken');
 const _ = require('underscore');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 let objectToSet = null;
 
 exports.editUser = (req, res) => {
