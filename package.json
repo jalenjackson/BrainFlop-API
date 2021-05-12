@@ -29,7 +29,7 @@
     "multer-s3": "^2.7.0",
     "multiparty": "^4.2.1",
     "node-gyp": "^3.8.0",
-    "nodemailer": "^4.7.0",
+    "nodemailer": "^6.4.16",
     "nodemon": "^1.18.4",
     "path": "^0.12.7",
     "pdf-to-text": "0.0.7",
